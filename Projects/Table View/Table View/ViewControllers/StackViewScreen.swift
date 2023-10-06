@@ -16,7 +16,7 @@ class StackViewScreen: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemMint
+        view.backgroundColor = .systemGray2
         
         title = "Stack View Screen"
         
