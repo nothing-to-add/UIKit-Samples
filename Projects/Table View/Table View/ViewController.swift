@@ -19,7 +19,6 @@ class ViewController: UIViewController {
         setupButton()
         view.backgroundColor = .systemBackground
         title = "First Screen"
-        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func setupButton() {
@@ -41,8 +40,7 @@ class ViewController: UIViewController {
     }
     
     @objc func gotToNextScreen() {
-        let nextScreen = SecondScreen()
-        nextScreen.title = "Second Screen"
+        let nextScreen = StackViewScreen()
         navigationController?.pushViewController(nextScreen, animated: true)
     }
 }
