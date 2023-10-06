@@ -15,6 +15,7 @@
 		F5D766222ACF62F200DD53B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5D766202ACF62F200DD53B2 /* LaunchScreen.storyboard */; };
 		F5D7662A2AD01FE800DD53B2 /* StackViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D766292AD01FE800DD53B2 /* StackViewScreen.swift */; };
 		F5D7662C2AD0440800DD53B2 /* SurveyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7662B2AD0440800DD53B2 /* SurveyButton.swift */; };
+		F5D7662E2AD04B3900DD53B2 /* TableViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7662D2AD04B3900DD53B2 /* TableViewScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		F5D766232ACF62F200DD53B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5D766292AD01FE800DD53B2 /* StackViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewScreen.swift; sourceTree = "<group>"; };
 		F5D7662B2AD0440800DD53B2 /* SurveyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyButton.swift; sourceTree = "<group>"; };
+		F5D7662D2AD04B3900DD53B2 /* TableViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				F5D7661E2ACF62F200DD53B2 /* Assets.xcassets */,
 				F5D766202ACF62F200DD53B2 /* LaunchScreen.storyboard */,
 				F5D766232ACF62F200DD53B2 /* Info.plist */,
+				F5D7662D2AD04B3900DD53B2 /* TableViewScreen.swift */,
 			);
 			path = "Table View";
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5D7661A2ACF62F000DD53B2 /* ViewController.swift in Sources */,
+				F5D7662E2AD04B3900DD53B2 /* TableViewScreen.swift in Sources */,
 				F5D7662A2AD01FE800DD53B2 /* StackViewScreen.swift in Sources */,
 				F5D766162ACF62F000DD53B2 /* AppDelegate.swift in Sources */,
 				F5D7662C2AD0440800DD53B2 /* SurveyButton.swift in Sources */,

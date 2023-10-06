@@ -12,36 +12,61 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let nextButton = UIButton()
+    let stackViewButton = UIButton()
+    let tableViewButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupButton()
+        setupStackViewButton()
+        setupTableViewButton()
         view.backgroundColor = .systemBackground
-        title = "First Screen"
+        title = "Main Screen"
     }
     
-    func setupButton() {
-        view.addSubview(nextButton)
+    func setupStackViewButton() {
+        view.addSubview(stackViewButton)
         
-        nextButton.configuration = .filled()
-        nextButton.configuration?.baseBackgroundColor = .systemPink
-        nextButton.configuration?.title = "Next"
+        stackViewButton.configuration = .filled()
+        stackViewButton.configuration?.baseBackgroundColor = .systemPink
+        stackViewButton.configuration?.title = "Stack View"
         
-        nextButton.addTarget(self, action: #selector(gotToNextScreen), for: .touchUpInside)
+        stackViewButton.addTarget(self, action: #selector(gotToStackViewScreen), for: .touchUpInside)
         
-        nextButton.translatesAutoresizingMaskIntoConstraints = false
+        stackViewButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            nextButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            nextButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            nextButton.widthAnchor.constraint(equalToConstant: 200),
-            nextButton.heightAnchor.constraint(equalToConstant: 50)
+            stackViewButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stackViewButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            stackViewButton.widthAnchor.constraint(equalToConstant: 200),
+            stackViewButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
-    @objc func gotToNextScreen() {
-        let nextScreen = StackViewScreen()
-        navigationController?.pushViewController(nextScreen, animated: true)
+    func setupTableViewButton() {
+        view.addSubview(tableViewButton)
+        
+        tableViewButton.configuration = .filled()
+        tableViewButton.configuration?.baseBackgroundColor = .systemPink
+        tableViewButton.configuration?.title = "Table View"
+        
+        tableViewButton.addTarget(self, action: #selector(gotToTableViewScreen), for: .touchUpInside)
+        
+        tableViewButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            tableViewButton.topAnchor.constraint(equalTo: stackViewButton.bottomAnchor, constant: 20),
+            tableViewButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            tableViewButton.widthAnchor.constraint(equalToConstant: 200),
+            tableViewButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
+    
+    @objc func gotToStackViewScreen() {
+        let screen = StackViewScreen()
+        navigationController?.pushViewController(screen, animated: true)
+    }
+    
+    @objc func gotToTableViewScreen() {
+        let screen = TableViewScreen()
+        navigationController?.pushViewController(screen, animated: true)
     }
 }
 
