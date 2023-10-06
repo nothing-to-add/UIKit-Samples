@@ -57,17 +57,17 @@ extension TableViewScreen {
     
     func fetchData() -> [Video] {
         return [
-            Video(image: UIImage(systemName: "book")!, title: "Book"),
-            Video(image: UIImage(systemName: "airplane")!, title: "Airplane"),
-            Video(image: UIImage(systemName: "car")!, title: "Car"),
-            Video(image: UIImage(systemName: "pencil")!, title: "Pencil"),
-            Video(image: UIImage(systemName: "eraser")!, title: "Eraser"),
-            Video(image: UIImage(systemName: "trash")!, title: "Trash"),
-            Video(image: UIImage(systemName: "folder")!, title: "Folder"),
-            Video(image: UIImage(systemName: "externaldrive")!, title: "External Drive"),
-            Video(image: UIImage(systemName: "clipboard")!, title: "Clipboard"),
-            Video(image: UIImage(systemName: "calendar")!, title: "Calendar"),
-            Video(image: UIImage(systemName: "menucard")!, title: "Menu Card"),
+            Video(image: Images.drone, title: "What is a Drone?"),
+            Video(image: Images.mario, title: "The main hero of the Mushroom Kingdom"),
+            Video(image: Images.trade, title: "Trade is the exchange of goods and services "),
+            Video(image: Images.camera, title: "The word camera means room"),
+            Video(image: Images.gameRemote, title: "Most gamepads also have two buttons in the middle"),
+            Video(image: Images.tapes, title: "Symbolizes the adhesion of the adhesive tape"),
+            Video(image: Images.motherboard, title: "A motherboard is the main printed circuit board"),
+            Video(image: Images.cat, title: "Is My Cat Happy Indoors?"),
+            Video(image: Images.vrSet, title: "A standalone VR headset does not require a PC"),
+            Video(image: Images.island, title: "Adventure Island is opened all summer long"),
+            Video(image: Images.gameBoy, title: "Access a collection of Game Boy™ games"),
             
         ]
     }

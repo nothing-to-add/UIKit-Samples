@@ -19,6 +19,7 @@
 		F5D766302AD052EA00DD53B2 /* UIVIew+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7662F2AD052EA00DD53B2 /* UIVIew+Ext.swift */; };
 		F5D766322AD0546800DD53B2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D766312AD0546800DD53B2 /* TableViewCell.swift */; };
 		F5D766342AD08E1600DD53B2 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D766332AD08E1600DD53B2 /* Video.swift */; };
+		F5D766392AD098D700DD53B2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D766382AD098D700DD53B2 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		F5D7662F2AD052EA00DD53B2 /* UIVIew+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew+Ext.swift"; sourceTree = "<group>"; };
 		F5D766312AD0546800DD53B2 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		F5D766332AD08E1600DD53B2 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		F5D766382AD098D700DD53B2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		F5D766142ACF62F000DD53B2 /* Table View */ = {
 			isa = PBXGroup;
 			children = (
+				F5D766382AD098D700DD53B2 /* Constants.swift */,
 				F5D766372AD0942200DD53B2 /* Entities */,
 				F5D766362AD0940900DD53B2 /* Models */,
 				F5D766352AD093E100DD53B2 /* ViewControllers */,
@@ -185,6 +188,7 @@
 				F5D7661A2ACF62F000DD53B2 /* ViewController.swift in Sources */,
 				F5D7662E2AD04B3900DD53B2 /* TableViewScreen.swift in Sources */,
 				F5D766342AD08E1600DD53B2 /* Video.swift in Sources */,
+				F5D766392AD098D700DD53B2 /* Constants.swift in Sources */,
 				F5D7662A2AD01FE800DD53B2 /* StackViewScreen.swift in Sources */,
 				F5D766162ACF62F000DD53B2 /* AppDelegate.swift in Sources */,
 				F5D7662C2AD0440800DD53B2 /* SurveyButton.swift in Sources */,
