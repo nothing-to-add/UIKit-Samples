@@ -51,6 +51,12 @@ extension CharacterListViewController: UITableViewDelegate, UITableViewDataSourc
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let character = characters[indexPath.row]
+        let screen = CharacterViewController()
+        navigationController?.pushViewController(screen, animated: true)
+    }
 }
 
 extension CharacterListViewController {
@@ -62,6 +68,8 @@ extension CharacterListViewController {
             Character(image: UIImage(systemName: "pencil")!, title: "Pencil"),
             Character(image: UIImage(systemName: "eraser")!, title: "Eraser"),
             Character(image: UIImage(systemName: "trash")!, title: "Trash"),
+            Character(image: UIImage(systemName: "folder")!, title: "Folder"),
+            Character(image: UIImage(systemName: "paperplane")!, title: "Paper plane"),
         ]
     }
 }

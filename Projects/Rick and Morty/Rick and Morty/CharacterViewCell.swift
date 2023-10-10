@@ -25,7 +25,8 @@ class CharacterViewCell: UITableViewCell {
         configureTitleLabel()
         
         setImageConstraints()
-        setTitleLabelConstraints()    }
+        setTitleLabelConstraints()
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

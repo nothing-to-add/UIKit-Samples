@@ -16,6 +16,7 @@
 		F5FAE4842AD5C3C30075F64B /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FAE4832AD5C3C30075F64B /* UIView+Ext.swift */; };
 		F5FAE4862AD5C4570075F64B /* CharacterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FAE4852AD5C4570075F64B /* CharacterViewCell.swift */; };
 		F5FAE4882AD5C4750075F64B /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FAE4872AD5C4750075F64B /* Character.swift */; };
+		F5FAE48A2AD5E71D0075F64B /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FAE4892AD5E71D0075F64B /* CharacterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F5FAE4832AD5C3C30075F64B /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		F5FAE4852AD5C4570075F64B /* CharacterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewCell.swift; sourceTree = "<group>"; };
 		F5FAE4872AD5C4750075F64B /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		F5FAE4892AD5E71D0075F64B /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				F5FAE4832AD5C3C30075F64B /* UIView+Ext.swift */,
 				F5FAE4852AD5C4570075F64B /* CharacterViewCell.swift */,
 				F5FAE4872AD5C4750075F64B /* Character.swift */,
+				F5FAE4892AD5E71D0075F64B /* CharacterViewController.swift */,
 			);
 			path = "Rick and Morty";
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			files = (
 				F5FAE4842AD5C3C30075F64B /* UIView+Ext.swift in Sources */,
 				F5FAE4742AD5C0460075F64B /* CharacterListViewController.swift in Sources */,
+				F5FAE48A2AD5E71D0075F64B /* CharacterViewController.swift in Sources */,
 				F5FAE4702AD5C0460075F64B /* AppDelegate.swift in Sources */,
 				F5FAE4882AD5C4750075F64B /* Character.swift in Sources */,
 				F5FAE4722AD5C0460075F64B /* SceneDelegate.swift in Sources */,
