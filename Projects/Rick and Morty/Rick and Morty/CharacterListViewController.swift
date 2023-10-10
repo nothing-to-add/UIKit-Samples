@@ -28,7 +28,7 @@ class CharacterListViewController: UIViewController {
     func configureTableView() {
         view.addSubview(tableView)
         setTableViewDelegates()
-        tableView.rowHeight = 100
+        tableView.rowHeight = self.view.frame.height/6
         tableView.register(CharacterViewCell.self, forCellReuseIdentifier: CharacterViewCell.id)
         tableView.pin(to: view)
     }
@@ -59,7 +59,9 @@ extension CharacterListViewController {
         return [
             Character(image: UIImage(systemName: "book")!, title: "Book"),
             Character(image: UIImage(systemName: "airplane")!, title: "Airplane"),
-            Character(image: UIImage(systemName: "pencil")!, title: "Pencil")
+            Character(image: UIImage(systemName: "pencil")!, title: "Pencil"),
+            Character(image: UIImage(systemName: "eraser")!, title: "Eraser"),
+            Character(image: UIImage(systemName: "trash")!, title: "Trash"),
         ]
     }
 }

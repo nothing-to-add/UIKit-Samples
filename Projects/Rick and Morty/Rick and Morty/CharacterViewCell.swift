@@ -25,8 +25,7 @@ class CharacterViewCell: UITableViewCell {
         configureTitleLabel()
         
         setImageConstraints()
-        setTitleLabelConstraints()
-    }
+        setTitleLabelConstraints()    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -51,7 +50,7 @@ class CharacterViewCell: UITableViewCell {
         cellImageView.translatesAutoresizingMaskIntoConstraints = false
         cellImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         cellImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive = true
-        cellImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        cellImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.8).isActive = true
         cellImageView.widthAnchor.constraint(equalTo: cellImageView.heightAnchor, multiplier: 16/9).isActive = true
     }
     
