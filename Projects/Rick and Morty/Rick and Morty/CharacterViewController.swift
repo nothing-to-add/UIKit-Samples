@@ -12,12 +12,36 @@ import UIKit
 
 class CharacterViewController: UIViewController {
 
+    private let character: Character
+    var titleLabel = UILabel()
+    
+    init(character: Character) {
+        self.character = character
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .green
+        view.backgroundColor = .systemBackground
+        
+        configureLabel()
+        set(character: character)
     }
     
-
+    func set(character: Character) {
+        titleLabel.text = character.title
+        titleLabel.numberOfLines = 0
+        titleLabel.adjustsFontSizeToFitWidth = true
+    }
+    
+    func configureLabel() {
+        view.addSubview(titleLabel)
+        titleLabel.pin(to: view)
+    }
 
 }

@@ -17,7 +17,6 @@ class CharacterListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemGray
         
         title = "All Characters"
         
@@ -54,7 +53,7 @@ extension CharacterListViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let character = characters[indexPath.row]
-        let screen = CharacterViewController()
+        let screen = CharacterViewController(character: character)
         navigationController?.pushViewController(screen, animated: true)
     }
 }
