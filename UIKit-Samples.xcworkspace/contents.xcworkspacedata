@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Projects/Rick and Morty/Rick and Morty.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Projects/Table View/Table View.xcodeproj">
    </FileRef>
 </Workspace>
