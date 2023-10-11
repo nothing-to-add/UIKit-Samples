@@ -33,7 +33,7 @@ class CharacterViewCell: UITableViewCell {
     }
     
     func set(character: Character) {
-        Task {
+        Task(priority: .background) {
             cellImageView.image = try await getImage(url: character.image)
         }
         cellTitleLabel.text = character.name

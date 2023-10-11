@@ -21,12 +21,11 @@ class CharacterListViewController: UIViewController {
         title = "All Characters"
         
         Task {
-            print("Start task")
             characters = try await fetchData()
-            print("Task count: \(characters.count)")
             
-            print("Count: \(characters.count)")
-            configureTableView()
+            DispatchQueue.main.async {
+                self.configureTableView()
+            }
         }
     }
     
@@ -69,7 +68,6 @@ extension CharacterListViewController {
     func fetchData() async throws -> [Character] {
         do {
             let data = try await CharacterHttpRequest().getCharacters()
-            print("Fetch count: \(data.results.count)")
             return data.results
         } catch {
             print(error.localizedDescription)
