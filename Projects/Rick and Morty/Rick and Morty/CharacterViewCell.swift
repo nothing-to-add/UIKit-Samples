@@ -33,8 +33,25 @@ class CharacterViewCell: UITableViewCell {
     }
     
     func set(character: Character) {
-        cellImageView.image = character.image
-        cellTitleLabel.text = character.title
+        Task {
+            cellImageView.image = try await getImage(url: character.image)
+        }
+        cellTitleLabel.text = character.name
+    }
+    
+    private func getImage(url: String) async throws -> UIImage {
+        do {
+            guard let encodedURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let url = URL(string: encodedURL) else {
+                throw HttpError.invalidURL
+            }
+            
+            let request = URLRequest(url: url)
+            let (data, _) = try await GenericHttpRequest().perform(request: request)
+            return UIImage(data: data) ?? UIImage(systemName: "questionmark")!
+        } catch {
+            print(error.localizedDescription)
+        }
+        return UIImage(systemName: "questionmark")!
     }
     
     func configureImageView() {

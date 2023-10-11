@@ -34,7 +34,7 @@ class CharacterViewController: UIViewController {
     }
     
     func set(character: Character) {
-        titleLabel.text = character.title
+        titleLabel.text = character.name
         titleLabel.numberOfLines = 0
         titleLabel.adjustsFontSizeToFitWidth = true
     }

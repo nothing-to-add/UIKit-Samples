@@ -20,8 +20,14 @@ class CharacterListViewController: UIViewController {
         
         title = "All Characters"
         
-        characters = fetchData()
-        configureTableView()
+        Task {
+            print("Start task")
+            characters = try await fetchData()
+            print("Task count: \(characters.count)")
+            
+            print("Count: \(characters.count)")
+            configureTableView()
+        }
     }
     
     func configureTableView() {
@@ -60,16 +66,15 @@ extension CharacterListViewController: UITableViewDelegate, UITableViewDataSourc
 
 extension CharacterListViewController {
     
-    func fetchData() -> [Character] {
-        return [
-            Character(image: UIImage(systemName: "book")!, title: "Book"),
-            Character(image: UIImage(systemName: "airplane")!, title: "Airplane"),
-            Character(image: UIImage(systemName: "pencil")!, title: "Pencil"),
-            Character(image: UIImage(systemName: "eraser")!, title: "Eraser"),
-            Character(image: UIImage(systemName: "trash")!, title: "Trash"),
-            Character(image: UIImage(systemName: "folder")!, title: "Folder"),
-            Character(image: UIImage(systemName: "paperplane")!, title: "Paper plane"),
-        ]
+    func fetchData() async throws -> [Character] {
+        do {
+            let data = try await CharacterHttpRequest().getCharacters()
+            print("Fetch count: \(data.results.count)")
+            return data.results
+        } catch {
+            print(error.localizedDescription)
+        }
+        return []
     }
 }
 

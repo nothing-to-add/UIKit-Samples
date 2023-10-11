@@ -17,7 +17,7 @@ protocol HTTPClient {
 class GenericHttpRequest: HTTPClient {
     func perform(request: URLRequest) async throws -> (Data, HTTPURLResponse) {
         let (data, response) = try await URLSession.shared.data(for: request)
-        guard let resp = response as? HTTPURLResponse, resp.statusCode == 201 else {
+        guard let resp = response as? HTTPURLResponse, resp.statusCode == 200 else {
             throw HttpError.invalidResponse
         }
         return (data, resp)

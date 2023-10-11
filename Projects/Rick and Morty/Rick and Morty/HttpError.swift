@@ -14,6 +14,7 @@ enum HttpError: Error {
     case invalidURL
     case invalidResponse
     case invalidData
+    case noSuchData
 }
 
 extension HttpError: LocalizedError {
@@ -32,6 +33,11 @@ extension HttpError: LocalizedError {
         case .invalidData:
             return NSLocalizedString(
                 "This Data is invalid",
+                comment: ""
+            )
+        case .noSuchData:
+            return NSLocalizedString(
+                "This data does not have target",
                 comment: ""
             )
         }

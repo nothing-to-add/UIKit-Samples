@@ -10,7 +10,30 @@
 
 import UIKit
 
-struct Character {
-    let image: UIImage
-    let title: String
+struct Characters: Codable {
+    let info: CharacterInfo
+    let results: [Character]
+}
+
+struct CharacterInfo: Codable {
+    let count, pages: Int
+    let next, prev: String?
+}
+
+struct Character: Codable {
+    let id: Int
+    let name, status, species, type, gender: String
+    let origin: CharacterOrigin
+    let location: CharacterLocation
+    let image: String
+    let episode: [String]
+    let url, created: String
+}
+
+struct CharacterOrigin: Codable {
+    let name, url: String
+}
+
+struct CharacterLocation: Codable {
+    let name, url: String
 }
