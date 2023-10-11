@@ -52,7 +52,7 @@ class CharacterViewCell: UITableViewCell {
         cellImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         cellImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive = true
         cellImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.8).isActive = true
-        cellImageView.widthAnchor.constraint(equalTo: cellImageView.heightAnchor, multiplier: 16/9).isActive = true
+        cellImageView.widthAnchor.constraint(equalTo: cellImageView.heightAnchor).isActive = true
     }
     
     func setTitleLabelConstraints() {
