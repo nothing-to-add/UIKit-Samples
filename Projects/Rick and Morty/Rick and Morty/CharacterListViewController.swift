@@ -11,10 +11,10 @@
 import UIKit
 
 class CharacterListViewController: UIViewController {
-
+    
     var tableView = UITableView()
     var characters: [Character] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,13 +23,11 @@ class CharacterListViewController: UIViewController {
         Task {
             characters = try await fetchData()
             
-            DispatchQueue.main.async {
-                self.configureTableView()
-            }
+            self.configureTableView()
         }
     }
     
-    func configureTableView() {
+    @MainActor func configureTableView() {
         view.addSubview(tableView)
         setTableViewDelegates()
         tableView.rowHeight = self.view.frame.height/6

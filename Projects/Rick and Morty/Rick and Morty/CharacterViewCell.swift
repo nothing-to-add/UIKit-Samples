@@ -33,6 +33,7 @@ class CharacterViewCell: UITableViewCell {
     }
     
     func set(character: Character) {
+        cellImageView.backgroundColor = .cyan
         Task(priority: .background) {
             cellImageView.image = try await getImage(url: character.image)
         }
