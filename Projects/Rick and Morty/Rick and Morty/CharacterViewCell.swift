@@ -18,6 +18,7 @@ class CharacterViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super .init(style: style, reuseIdentifier: reuseIdentifier)
+        backgroundColor = .systemBackground
         addSubview(cellImageView)
         addSubview(cellTitleLabel)
         
@@ -33,11 +34,20 @@ class CharacterViewCell: UITableViewCell {
     }
     
     func set(character: Character) {
-        cellImageView.backgroundColor = .cyan
+        let spinner = UIActivityIndicatorView()
+        configureSpinner(spinner)
         Task(priority: .background) {
             cellImageView.image = try await getImage(url: character.image)
+            spinner.stopAnimating()
         }
         cellTitleLabel.text = character.name
+    }
+    
+    private func configureSpinner(_ sp: UIActivityIndicatorView) {
+        cellImageView.addSubview(sp)
+        sp.style = .large
+        sp.startAnimating()
+        sp.pin(to: cellImageView)
     }
     
     private func getImage(url: String) async throws -> UIImage {

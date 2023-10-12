@@ -37,6 +37,7 @@ class CharacterViewController: UIViewController {
         titleLabel.text = character.name
         titleLabel.numberOfLines = 0
         titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.textAlignment = .center
     }
     
     func configureLabel() {
