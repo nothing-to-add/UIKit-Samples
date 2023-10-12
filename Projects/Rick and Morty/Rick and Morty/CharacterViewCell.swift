@@ -58,7 +58,9 @@ class CharacterViewCell: UITableViewCell {
             
             let request = URLRequest(url: url)
             let (data, _) = try await GenericHttpRequest().perform(request: request)
-            return UIImage(data: data) ?? UIImage(systemName: "questionmark")!
+            if let image = UIImage(data: data) {
+                return image
+            }
         } catch {
             print(error.localizedDescription)
         }

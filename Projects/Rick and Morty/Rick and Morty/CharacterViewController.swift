@@ -13,8 +13,11 @@ import UIKit
 class CharacterViewController: UIViewController {
 
     private let character: Character
-    var titleLabel = UILabel()
-    var cardView = UIView()
+    private var titleLabel = UILabel()
+    private var cardView = UIView()
+    private var avatar = UIImage()
+    private var smallSide = 0.0
+    private var bigSide = 0.0
     
     init(character: Character) {
         self.character = character
@@ -30,6 +33,8 @@ class CharacterViewController: UIViewController {
         
         view.backgroundColor = .systemBackground
         navigationItem.largeTitleDisplayMode = .never
+        
+        getSideValues()
         
         configureMyView()
         configureLabel()
@@ -58,5 +63,35 @@ class CharacterViewController: UIViewController {
         cardView.setSize(height: guide.layoutFrame.size.height - 200, width: guide.layoutFrame.size.width - 100)
         cardView.layer.cornerRadius = 10
     }
+    
+    private func getSideValues() {
+        let guide = view.safeAreaLayoutGuide
+        if guide.layoutFrame.size.height > guide.layoutFrame.size.width {
+            smallSide = guide.layoutFrame.size.width
+            bigSide = guide.layoutFrame.size.height
+        }
+    }
+    
+    private func configureAvatar() {
+        
+    }
+    
+    private func getImage(url: String) async throws -> UIImage {
+        do {
+            guard let encodedURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let url = URL(string: encodedURL) else {
+                throw HttpError.invalidURL
+            }
+            
+            let request = URLRequest(url: url)
+            let (data, _) = try await GenericHttpRequest().perform(request: request)
+            if let image = UIImage(data: data) {
+                return image
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+        return UIImage(systemName: "questionmark")!
+    }
+    
 
 }
