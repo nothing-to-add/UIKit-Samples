@@ -15,6 +15,7 @@ class CharacterViewCell: UITableViewCell {
     static let id = "CharacterViewCell"
     var cellImageView = UIImageView()
     var cellTitleLabel = UILabel()
+    var spinner = UIActivityIndicatorView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super .init(style: style, reuseIdentifier: reuseIdentifier)
@@ -34,7 +35,6 @@ class CharacterViewCell: UITableViewCell {
     }
     
     func set(character: Character) {
-        let spinner = UIActivityIndicatorView()
         configureSpinner(spinner)
         Task(priority: .background) {
             cellImageView.image = try await getImage(url: character.image)

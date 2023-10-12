@@ -21,4 +21,37 @@ extension UIView {
             bottomAnchor.constraint(equalTo: superView.bottomAnchor)
         ])
     }
+    
+    func pin(to superView: UILayoutGuide) {
+        translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            topAnchor.constraint(equalTo: superView.topAnchor),
+            leadingAnchor.constraint(equalTo: superView.leadingAnchor),
+            trailingAnchor.constraint(equalTo: superView.trailingAnchor),
+            bottomAnchor.constraint(equalTo: superView.bottomAnchor)
+        ])
+    }
+    
+    func pin(toCenter superView: UIView) {
+        translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            centerXAnchor.constraint(equalTo: superView.centerXAnchor),
+            centerYAnchor.constraint(equalTo: superView.centerYAnchor)
+        ])
+    }
+    
+    func pin(toCenter superView: UILayoutGuide) {
+        translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            centerXAnchor.constraint(equalTo: superView.centerXAnchor),
+            centerYAnchor.constraint(equalTo: superView.centerYAnchor)
+        ])
+    }
+    
+    func setSize(height h: CGFloat, width w: CGFloat) {
+        NSLayoutConstraint.activate([
+            heightAnchor.constraint(equalToConstant: h),
+            widthAnchor.constraint(equalToConstant: w)
+        ])
+    }
 }

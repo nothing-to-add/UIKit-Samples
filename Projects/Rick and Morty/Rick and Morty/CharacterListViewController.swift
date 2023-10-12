@@ -58,6 +58,7 @@ extension CharacterListViewController: UITableViewDelegate, UITableViewDataSourc
         let character = characters[indexPath.row]
         let screen = CharacterViewController(character: character)
         navigationController?.pushViewController(screen, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
