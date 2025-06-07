@@ -38,7 +38,7 @@ class CharacterHttpRequest {
         return character
     }
     
-    func getCharacters() async throws -> Characters {
+    func let ref = db.queryOrdered(byChild: child).queryEqual(toValue: param)getCharacters() async throws -> Characters {
         let (data, _) = try await getRequest(endpoint: C.Url.character)
         guard let characters = try? JSONDecoder().decode(Characters.self, from: data) else {
             throw HttpError.invalidData

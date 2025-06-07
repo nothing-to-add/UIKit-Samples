@@ -15,7 +15,9 @@ class CharacterViewController: UIViewController {
     private let character: Character
     private var titleLabel = UILabel()
     private var cardView = UIView()
-    private var avatar = UIImage()
+    private var avatar = UIImageView()
+    private var mainStackView = UIStackView()
+    private var textStackView = UIStackView()
     private var smallSide = 0.0
     private var bigSide = 0.0
     
@@ -36,7 +38,8 @@ class CharacterViewController: UIViewController {
         
         getSideValues()
         
-        configureMyView()
+        configureMainStack()
+        configureCardView()
         configureLabel()
         set(character: character)
     }
@@ -54,7 +57,7 @@ class CharacterViewController: UIViewController {
         titleLabel.pin(to: cardView)
     }
     
-    private func configureMyView() {
+    private func configureCardView() {
         view.addSubview(cardView)
         let guide = view.safeAreaLayoutGuide
         cardView.frame = CGRect()
@@ -70,6 +73,12 @@ class CharacterViewController: UIViewController {
             smallSide = guide.layoutFrame.size.width
             bigSide = guide.layoutFrame.size.height
         }
+    }
+    
+    private func configureMainStack() {
+        cardView.addSubview(mainStackView)
+        mainStackView.distribution = .fillEqually
+        mainStackView.pin(to: cardView)
     }
     
     private func configureAvatar() {
@@ -91,6 +100,15 @@ class CharacterViewController: UIViewController {
             print(error.localizedDescription)
         }
         return UIImage(systemName: "questionmark")!
+    }
+    
+    private func orientationValue<T> (portrait: T, landscape: T) -> T {
+        return UIDevice.current.orientation.isPortrait ? portrait : landscape
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        view.backgroundColor = orientationValue(portrait: .brown, landscape: .cyan)
     }
     
 
